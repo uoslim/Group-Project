@@ -10,10 +10,10 @@ class DrawingCurve extends PaintFunction {
         if (this.clickCount === 0){
             this.contextDraft.strokeStyle = inputColor;
             this.contextDraft.lineJoin = "round";
-            this.contextDraft.lineWidth = inputPX;
+            this.contextDraft.lineWidth = inputWidth;
             this.contextReal.strokeStyle = inputColor;
             this.contextReal.lineJoin = "round";
-            this.contextReal.lineWidth = inputPX;
+            this.contextReal.lineWidth = inputWidth;
             this.x = coord[0];
             this.y = coord[1];
             this.contextReal.beginPath();

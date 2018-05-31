@@ -1,0 +1,59 @@
+*{
+    margin:0;
+}
+
+.button{
+    padding-top:10px;
+    padding-bottom:10px;
+    background-color: rgb(62, 72, 116);
+    width:80px;
+    color:white;
+    font-size: 20px;
+    border-radius: 20px;
+}
+
+#first{
+    margin-left: 160px;
+}
+
+#buttonsFirst{
+    display:flex;
+}
+
+#buttonsSecond{
+    display:flex;
+    flex-wrap:wrap;
+    width:160px;
+    justify-content: center;
+}
+
+.canvas{
+    border:3px black solid;
+    position:absolute;
+    top:42px;
+    bottom:0px;
+    left:160px;
+    right:0px;
+    background-color: white;
+}
+
+#canvas-draft{
+    background-color: transparent;
+}
+body{
+    overflow:hidden;
+}
+#canvas-container{
+    height:720px;
+}
+
+#inputPX{
+    width:150px;
+    height:30px;
+    font-size: 20px;
+}
+
+#inputColor{
+    width:90px;
+    height:30px;
+}

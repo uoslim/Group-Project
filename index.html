@@ -1,0 +1,115 @@
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp"
+        crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet" type='text/css'>
+</head>
+
+<body>
+    <section id="first">
+        <div id="buttonsFirst">
+            <button type="button" class="button" id="drawing-pencil">
+                <i class="fas fa-pencil-alt"></i>
+            </button>
+            <button type="button" class="button" id="drawing-eraser">
+                <i class="fas fa-eraser"></i>
+            </button>
+            <button type="button" class="button" id="clear-all">Clear</button>
+
+        </div>
+    </section>
+    <section id="second">
+        <div id="buttonsSecond">
+            <input id="inputPX" type="text">
+            <input id="inputColor" type="color">
+            <input id="inputWidth" type="range" min="1" max="20" value="5">
+            <button type="button" class="button" id="drawing-rectangle">
+                <i class="fas fa-square"></i>
+            </button>
+            <button type="button" class="button" id="drawing-rectangleStroke">
+                <i class="far fa-square"></i>
+            </button>
+            <button type="button" class="button" id="drawing-circle">
+                <i class="fas fa-circle"></i>
+            </button>
+            <button type="button" class="button" id="drawing-circleStroke">
+                <i class="far fa-circle"></i>
+            </button>
+            <button type="button" class="button" id="drawing-STline">——</button>
+            <button type="button" class="button" id="drawing-curve">~</button>
+            <button type="button" class="button" id="drawing-spray">~</button>
+        </div>
+        <div id="canvas-container">
+            <canvas id="canvas-real" class="canvas" width='1200px' height='720px'></canvas>
+            <canvas id="canvas-draft" class="canvas" width='1200px' height='720px'></canvas>
+        </div>
+    </section>
+    <script type='text/javascript' src="https://code.jquery.com/jquery-3.2.1.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa"
+        crossorigin="anonymous"></script>
+    <script type='text/javascript' src="canvas-common.js"></script>
+    <script type='text/javascript' src="clear-all.js"></script>
+    <script type='text/javascript' src="drawing-pencil.js"></script>
+    <script type='text/javascript' src="drawing-eraser.js"></script>
+    <script type='text/javascript' src="drawing-rectangle.js"></script>
+    <script type='text/javascript' src="drawing-rectangleStroke.js"></script>
+    <script type='text/javascript' src="drawing-circleStroke.js"></script>
+    <script type='text/javascript' src="drawing-circle.js"></script>
+    <script type='text/javascript' src="drawing-STline.js"></script>
+    <script type='text/javascript' src="drawing-curve.js"></script>
+    <script type='text/javascript' src="drawing-spray.js"></script>
+    <script type='text/javascript' src="drawing-color.js"></script>
+    <script type='text/javascript' src="width.js"></script>
+    <script type='text/javascript'>
+        $('#drawing-rectangle').click(() => {
+            currentFunction = new DrawingRectangle(contextReal, contextDraft);
+        });
+        $('#drawing-pencil').click(() => {
+            currentFunction = new DrawingPencil(contextReal, contextDraft);
+        });
+        $('#drawing-eraser').click(() => {
+            currentFunction = new DrawingEraser(contextReal, contextDraft);
+        });
+        $('#drawing-rectangleStroke').click(() => {
+            currentFunction = new DrawingRectangleStroke(contextReal, contextDraft);
+        });
+        $('#drawing-circle').click(() => {
+            currentFunction = new DrawingCircle(contextReal, contextDraft);
+        });
+        $('#drawing-circleStroke').click(() => {
+            currentFunction = new DrawingCircleStroke(contextReal, contextDraft);
+        });
+        $('#drawing-STline').click(() => {
+            currentFunction = new DrawingSTline(contextReal, contextDraft);
+        });
+
+        $('#drawing-curve').click(() => {
+            currentFunction = new DrawingCurve(contextReal, contextDraft);
+        });
+
+        $('#drawing-spray').click(() => {
+            currentFunction = new DrawingSpray(contextReal, contextDraft);
+        });
+
+
+        $('#clear-all').click(() => {
+            let sure = confirm("Are you sure?");
+            if (sure){
+                clearFunction = new ClearAll(contextReal,contextDraft);
+                clearFunction.clear(contextReal,contextDraft);
+            }
+            
+            
+
+        });
+
+
+
+        currentFunction = new DrawingPencil(contextReal, contextDraft);
+    </script>
+</body>
+
+</html>

@@ -11,10 +11,10 @@ class DrawingSTline extends PaintFunction{
 onMouseDown(coord,event){
     this.contextDraft.strokeStyle = inputColor;
     this.contextDraft.lineJoin = "round";
-    this.contextDraft.lineWidth = inputPX;
+    this.contextDraft.lineWidth = inputWidth;
     this.contextReal.strokeStyle = inputColor;
     this.contextReal.lineJoin = "round";
-    this.contextReal.lineWidth = inputPX;
+    this.contextReal.lineWidth = inputWidth;
     this.contextReal.beginPath();
     this.contextReal.moveTo(coord[0],coord[1]);
     this.x = coord[0];

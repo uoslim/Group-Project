@@ -8,14 +8,14 @@ class DrawingRectangleStroke extends PaintFunction{
     onMouseDown(coord,event){
         this.contextReal.strokeStyle = inputColor;
         this.contextReal.lineJoin = "round";
-        this.contextReal.lineWidth = inputPX;
+        this.contextReal.lineWidth = inputWidth;
         this.origX = coord[0];
         this.origY = coord[1];
     }
     onDragging(coord,event){
         this.contextDraft.strokeStyle = inputColor;
         this.contextDraft.lineJoin = "round";
-        this.contextDraft.lineWidth = inputPX;
+        this.contextDraft.lineWidth = inputWidth;
         this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
         this.contextDraft.strokeRect(this.origX,this.origY,coord[0]- this.origX,coord[1] - this.origY)
     }

@@ -7,7 +7,7 @@ class DrawingCircleStroke extends PaintFunction{
     onMouseDown(coord,event){
         this.contextReal.strokeStyle = inputColor;
         this.contextReal.lineJoin = "round";
-        this.contextReal.lineWidth = inputPX;
+        this.contextReal.lineWidth = inputWidth;
         this.contextReal.beginPath();
         this.origX = coord[0];
         this.origY = coord[1];
@@ -16,7 +16,7 @@ class DrawingCircleStroke extends PaintFunction{
     onDragging(coord,event){
         this.contextDraft.strokeStyle = inputColor;
         this.contextDraft.lineJoin = "round";
-        this.contextDraft.lineWidth = inputPX;
+        this.contextDraft.lineWidth = inputWidth;
         this.contextDraft.clearRect(0,0,canvasDraft.width,canvasDraft.height);
         this.contextDraft.beginPath();        
         this.contextDraft.ellipse(this.origX, this.origY, Math.abs(coord[0]- this.origX), Math.abs(coord[1] - this.origY), 0 * Math.PI/180, 0, 2 * Math.PI) // rotation hardcoded as zero - essentially drawing an arc from zero @ x-axis to 2pi;
